@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour {
 		if (other.tag == "MAP") {
 			if (BoomEffect != null)
 				Instantiate(BoomEffect, transform.position, transform.rotation);
-			Debug.Log("Map");
 			Destroy(gameObject);
 			return;
 		}
@@ -17,7 +16,6 @@ public class Bullet : MonoBehaviour {
 			if (BoomEffect != null)
 				Instantiate(BoomEffect, transform.position, transform.rotation);
 			other.GetComponent<PlayerUnit>().isDead = true;
-			Debug.Log("Player");
 			Destroy(gameObject);
 			return;
 		}

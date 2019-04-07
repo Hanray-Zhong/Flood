@@ -6,12 +6,15 @@ public class PlayerController : MonoBehaviour {
 
 	private float hl;
 	private float rise;
-	private Vector2 		MoveDir;
+	private Vector2 MoveDir;
 
 	[Header("Move")]
 	public float Speed;
 	public float Rise_speed;
 	public float Drag;
+	[Header("Animation")]
+	public Animator animator;
+
 
 	void FixedUpdate () {
 		HandleConfiguration ();
@@ -29,6 +32,26 @@ public class PlayerController : MonoBehaviour {
 	void GetMoveDir () {
 		MoveDir = new Vector2(0, 0);
 		MoveDir = new Vector2(hl, 0).normalized;
+		if (hl > 0) {
+			gameObject.GetComponent<SpriteRenderer>().flipX = true;
+		}
+		else if (hl < 0) {
+			gameObject.GetComponent<SpriteRenderer>().flipX = false;
+		}
+		if (hl != 0) {
+			animator.SetBool("Move", true);
+			return;
+		}
+		else {
+			animator.SetBool("Move", false);
+		}
+		if (rise == 0) {
+			animator.SetBool("Rise", false);
+			return;
+		}
+		else {
+			animator.SetBool("Rise", true);
+		}
 	}
 	void StartMove () {
 		this.gameObject.GetComponent<Rigidbody2D>().drag = Drag;

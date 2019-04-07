@@ -9,9 +9,7 @@ public class TriggerTest : MonoBehaviour {
 		if (other.tag != "Player") {
 			return;
 		}
-		Debug.Log("get trigger!");
 		if (Input.GetKey(KeyCode.K)) {
-			Debug.Log("get key!");
 			gameObject.GetComponent<SpriteRenderer>().color = color;
 		}
 	}
