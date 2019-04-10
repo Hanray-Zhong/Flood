@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	public float Speed;
 	public float Rise_speed;
 	public float Drag;
+	public float RayDistance;
 	[Header("Animation")]
 	public Animator animator;
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 		GetMoveDir ();
 		StartMove ();
 		RiseUp();
+		IsOntheGround();
 	}
 	/// <summary>
 	/// 手柄配置
@@ -59,5 +61,15 @@ public class PlayerController : MonoBehaviour {
 	}
 	void RiseUp() {
 		this.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * rise * Rise_speed * Time.deltaTime);
+	}
+	void IsOntheGround() {
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, new Vector2(0, -1), RayDistance);
+		foreach (var item in hits) {
+			if (item.collider.gameObject.tag == "MAP") {
+				animator.SetBool("OnTheGround", true);
+				return;
+			}
+		}
+		animator.SetBool("OnTheGround", false);
 	}
 }
