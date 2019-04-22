@@ -73,3 +73,24 @@ public class PlayerController : MonoBehaviour {
 		animator.SetBool("OnTheGround", false);
 	}
 }
+
+public class consumeManager : MonoBehaviour {
+	public void damage() {
+
+	}
+}
+public class effectBase
+{
+    public consumeManager ConsumeManager;    
+    public virtual void func(int type)
+    {
+            
+    } 
+}
+public class unNameFire : effectBase
+{
+    public override void func(int type)
+    {
+        ConsumeManager.damage();
+    }
+}
