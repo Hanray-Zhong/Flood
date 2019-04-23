@@ -20,6 +20,9 @@ public class Follow : MonoBehaviour {
     }
  
     void Update(){
+        if (player == null) {
+            return;
+        }
         var x = transform.position.x;
         var y = transform.position.y;
         if (IsFollowing) {

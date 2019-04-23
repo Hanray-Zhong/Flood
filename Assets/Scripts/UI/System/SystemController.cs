@@ -15,14 +15,6 @@ public class SystemController : MonoBehaviour {
 		BlackImage.GetComponent<Fade>().CanFade = true;
 		StartCoroutine(Load(i));
 	}
-	public void ReloadScene() {
-		BlackImage.GetComponent<Fade>().CanFade = true;
-		StartCoroutine(Reload());
-	}
-	IEnumerator Reload() {
-		yield return new WaitForSeconds(2);
-		SceneManager.LoadScene(0);
-	}
 	IEnumerator Load(int i) {
 		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene(i);

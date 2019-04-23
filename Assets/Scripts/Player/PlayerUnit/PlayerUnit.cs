@@ -7,12 +7,13 @@ public class PlayerUnit : MonoBehaviour {
 	public GameObject DeadEffect;
 	
 	public bool isDead = false;
+	public int recnetCard;
 
 	private void Update() {
 		if (isDead == true) {
 			if (DeadEffect != null)
 				Instantiate(DeadEffect, transform.position, transform.rotation);
-			systemController.GetComponent<SystemController>().ReloadScene();
+			systemController.GetComponent<SystemController>().LoadScene(recnetCard);
 			Destroy(gameObject);
 		}
 	}

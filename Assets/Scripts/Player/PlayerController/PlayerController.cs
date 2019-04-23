@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour {
 	public float Rise_speed;
 	public float Drag;
 	public float RayDistance;
+	public CapsuleCollider2D main_collider;
+	public CapsuleCollider2D collider_1;
+	public CapsuleCollider2D collider_2;
 	[Header("Animation")]
 	public Animator animator;
 
@@ -34,6 +37,14 @@ public class PlayerController : MonoBehaviour {
 	void GetMoveDir () {
 		MoveDir = new Vector2(0, 0);
 		MoveDir = new Vector2(hl, 0).normalized;
+		if (hl == 0) {
+			main_collider.offset = collider_1.offset;
+			main_collider.size = collider_1.size;
+		}
+		else {
+			main_collider.offset = collider_2.offset;
+			main_collider.size = collider_2.size;
+		}
 		if (hl > 0) {
 			gameObject.GetComponent<SpriteRenderer>().flipX = true;
 		}

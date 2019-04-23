@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 4687459983057094727}
   - component: {fileID: 4687459983057094724}
   - component: {fileID: 4687459983057094721}
+  - component: {fileID: 7782127504201934448}
   - component: {fileID: 4687459983057094720}
+  - component: {fileID: 5204713982044099791}
   - component: {fileID: 4687459983057094722}
   - component: {fileID: 4687459983057094726}
   - component: {fileID: 4687459983057094723}
@@ -105,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &4687459983057094720
+--- !u!70 &7782127504201934448
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,8 +120,40 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.26936424}
-  m_Size: {x: 5.79, y: 8.511272}
+  m_Offset: {x: 0.0891475, y: -0.12562056}
+  m_Size: {x: 4.2566323, y: 8.179705}
+  m_Direction: 0
+--- !u!70 &4687459983057094720
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687459983057094725}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0891475, y: -0.12562056}
+  m_Size: {x: 4.2566323, y: 8.179705}
+  m_Direction: 0
+--- !u!70 &5204713982044099791
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687459983057094725}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.054378565, y: 0.20426826}
+  m_Size: {x: 6.0746455, y: 6.0746455}
   m_Direction: 0
 --- !u!95 &4687459983057094722
 Animator:
@@ -156,6 +190,9 @@ MonoBehaviour:
   Rise_speed: 1500
   Drag: 10
   RayDistance: 0.9
+  main_collider: {fileID: 7782127504201934448}
+  collider_1: {fileID: 4687459983057094720}
+  collider_2: {fileID: 5204713982044099791}
   animator: {fileID: 4687459983057094722}
 --- !u!114 &4687459983057094723
 MonoBehaviour:
@@ -172,3 +209,4 @@ MonoBehaviour:
   systemController: {fileID: 0}
   DeadEffect: {fileID: 1615402597081308, guid: 5ff5445ac2bdbba4eae1c99568b02acc, type: 3}
   isDead: 0
+  recnetCard: 1
