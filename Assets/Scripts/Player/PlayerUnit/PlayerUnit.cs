@@ -23,11 +23,11 @@ public class PlayerUnit : MonoBehaviour {
 		}
 		if (LoseEnergy) {
 			Energy -= DecreaseSpeed * Time.deltaTime;
-			if (Energy == 0) {
+			if (Energy <= 0) {
 				isDead = true;
 			}
 		}
-		Color color = new Color(1, 1, 1, Energy / 100);
+		Color color = new Color(1, 1, 1, (Energy + 40) / 100);
 		gameObject.GetComponent<SpriteRenderer>().color = color;
 	}
 }

@@ -7,10 +7,8 @@ using UnityEngine;
 public class WaterFlow : PostEffectBase
 {
     //扭曲的时间系数
-    [Range(0.0f, 1.0f)]
     public float DistortTimeFactor;
     //扭曲的强度
-    [Range(0.0f, 0.2f)]
     public float DistortStrength;
     //噪声图
     public Texture NoiseTexture = null;

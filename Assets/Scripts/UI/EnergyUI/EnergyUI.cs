@@ -8,6 +8,7 @@ public class EnergyUI : MonoBehaviour {
     private float energy; 
 
     private void Update() {
+        if (Player == null) return;
         energy = Player.GetComponent<PlayerUnit>().Energy;
         gameObject.GetComponent<RectTransform>().offsetMax = new Vector2(-285 * (100 - energy) / 100, 0);
     }

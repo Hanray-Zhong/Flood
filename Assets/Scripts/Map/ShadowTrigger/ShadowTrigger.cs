@@ -6,6 +6,8 @@ public class ShadowTrigger : MonoBehaviour
 {
     public GameObject shadow;
     public Camera main_camera;
+    public BoxCollider2D Origin_OutCollider;
+    public BoxCollider2D new_OutCollider;
     private bool change = false;
     public bool CanFade = false;
     private float speed = 0;
@@ -21,7 +23,12 @@ public class ShadowTrigger : MonoBehaviour
             change = true;
             CanFade = true;
             main_camera.GetComponent<Fog>().enabled = true;
-            main_camera.GetComponent<Follow>().smoothing = new Vector2(2, 2);
+            main_camera.GetComponent<Follow>().smoothing = new Vector2(1.5f, 1.5f);
+            other.GetComponent<PlayerController>().Speed = 1000;
+            if (new_OutCollider != null) {
+                main_camera.GetComponent<Follow>().Bounds = new_OutCollider;
+                main_camera.GetComponent<Follow>().UpdateBounds();
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
@@ -30,6 +37,11 @@ public class ShadowTrigger : MonoBehaviour
             CanFade = true;
             main_camera.GetComponent<Fog>().enabled = false;
             main_camera.GetComponent<Follow>().smoothing = new Vector2(0.5f, 0.5f);
+            other.GetComponent<PlayerController>().Speed = 1500;
+            if (new_OutCollider != null) {
+                main_camera.GetComponent<Follow>().Bounds = Origin_OutCollider;
+                main_camera.GetComponent<Follow>().UpdateBounds();
+            }
         }
     }
 
