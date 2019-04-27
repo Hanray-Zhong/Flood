@@ -23,7 +23,8 @@ public class ShadowTrigger : MonoBehaviour
             change = true;
             CanFade = true;
             main_camera.GetComponent<Fog>().enabled = true;
-            main_camera.GetComponent<Follow>().smoothing = new Vector2(1.5f, 1.5f);
+            main_camera.GetComponent<Follow>().smoothing = new Vector2(2, 2);
+            main_camera.GetComponent<Follow>().Margin = new Vector2(0.3f, 0.3f);
             other.GetComponent<PlayerController>().Speed = 1000;
             if (new_OutCollider != null) {
                 main_camera.GetComponent<Follow>().Bounds = new_OutCollider;
@@ -37,6 +38,7 @@ public class ShadowTrigger : MonoBehaviour
             CanFade = true;
             main_camera.GetComponent<Fog>().enabled = false;
             main_camera.GetComponent<Follow>().smoothing = new Vector2(0.5f, 0.5f);
+            main_camera.GetComponent<Follow>().Margin = new Vector2(1, 1);
             other.GetComponent<PlayerController>().Speed = 1500;
             if (new_OutCollider != null) {
                 main_camera.GetComponent<Follow>().Bounds = Origin_OutCollider;
