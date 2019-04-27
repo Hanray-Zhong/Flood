@@ -1552,6 +1552,11 @@ PrefabInstance:
       propertyPath: systemController
       value: 
       objectReference: {fileID: 678384189}
+    - target: {fileID: 4350607955967199563, guid: 49c5dcf6c0442b346b2fe282d167776c,
+        type: 3}
+      propertyPath: Scene_num
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c5dcf6c0442b346b2fe282d167776c, type: 3}
 --- !u!1001 &4687459982304988773
@@ -1626,6 +1631,11 @@ PrefabInstance:
       propertyPath: systemController
       value: 
       objectReference: {fileID: 678384189}
+    - target: {fileID: 4687459983057094723, guid: d1d1a928bb3b1dc4bb01edc69198ff6d,
+        type: 3}
+      propertyPath: Energy
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d1a928bb3b1dc4bb01edc69198ff6d, type: 3}
 --- !u!1001 &7715386230714524216
@@ -1883,10 +1893,19 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8412337274413823486, guid: b62965fdd32a3e541b1393772d243e27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8412337273812791185, guid: b62965fdd32a3e541b1393772d243e27,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a6866beca17e1bc4692df50939755867, type: 2}
+    - target: {fileID: 841493653, guid: b62965fdd32a3e541b1393772d243e27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62965fdd32a3e541b1393772d243e27, type: 3}

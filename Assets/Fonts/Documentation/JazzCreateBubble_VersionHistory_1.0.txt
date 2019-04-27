@@ -1,0 +1,11 @@
+﻿                          JazzCreateBubble (Full Version) Font Version History  date-format = dd/mm/yyyy
+
+
+Version 1.0 - a) added 3D world space capital letters, numbers and 5 symbols &@!.?
+              b) added new 3D world space characters to the demo scene
+              c) added script to rotate displaying .ttf font and the 3D characters
+              d) added to Alt key document to include a Guide/Tips for using 3D characters
+              e) added store icons, meta-data, screenshots.
+Version 1.0 - Submitted (13/04/2016)
+
+JazzCreate©2015-2016.
