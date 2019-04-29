@@ -6,6 +6,7 @@ public class Key : MonoBehaviour
 {
 	public bool Picked = false;
     public GameObject effect;
+	public GameObject KeyUI;
 
 	private float radian = 0; // 弧度
 	public float perRadian; // 每次变化的弧度
@@ -26,6 +27,7 @@ public class Key : MonoBehaviour
             Destroy(effect);
             gameObject.SetActive(false);
 			Picked = true; 
+			KeyUI.SetActive(true);
 		}
 	}
 }

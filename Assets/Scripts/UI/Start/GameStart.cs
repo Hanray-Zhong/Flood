@@ -8,7 +8,8 @@ public class GameStart : MonoBehaviour
     void Update()
     {
         if (Input.anyKeyDown) {
-            systemController.LoadScene(1);
+            PlayerPrefs.SetInt("Reload", 0);
+            systemController.LoadScene(6);
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fade : MonoBehaviour {
 	private CanvasGroup canvasGroup;
 	private float fadeSpeed;
-
+	public float FadeSpeed;
 	public bool CanFade;
 	private void Start() {
 		canvasGroup = GetComponent<CanvasGroup>();
@@ -14,10 +14,16 @@ public class Fade : MonoBehaviour {
 	void Update () {
 		if (CanFade) {
 			if (canvasGroup.alpha == 0) {
-				fadeSpeed = 0.03f;
+				if (FadeSpeed == 0)
+					fadeSpeed = 0.03f;
+				else
+					fadeSpeed = FadeSpeed;
 			}
 			else if (canvasGroup.alpha == 1) {
-				fadeSpeed = -0.03f;
+				if (FadeSpeed == 0)
+					fadeSpeed = -0.03f;
+				else
+					fadeSpeed = -FadeSpeed;
 			}
 		}
 		else {

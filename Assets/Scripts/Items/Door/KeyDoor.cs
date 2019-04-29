@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class KeyDoor : MonoBehaviour
 {
-    public Key key;
+    public Key[] keys;
     public float MoveSpeed;
     public Vector3 MoveDir;
+    public GameObject Text;
 
     private bool turn_on = false;
     private float stopTime = 0;
@@ -21,8 +22,21 @@ public class KeyDoor : MonoBehaviour
         if (other.tag != "Player") {
 			return;
 		}
-		if (Input.GetKey(KeyCode.K) && key.Picked) {
+		if (Input.GetKey(KeyCode.K)) {
+            foreach (var item in keys) {
+                if (!item.Picked) {
+                    if (Text != null) {
+                        Text.GetComponent<Fade>().CanFade = true;
+                        StartCoroutine(FadeAgain());
+                    }
+                    return;
+                }
+            }
 			turn_on = true;
 		}
+    }
+    IEnumerator FadeAgain() {
+        yield return new WaitForSeconds(2);
+        Text.GetComponent<Fade>().CanFade = true;
     }
 }

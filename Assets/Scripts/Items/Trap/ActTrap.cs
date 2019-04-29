@@ -8,10 +8,14 @@ public class ActTrap : MonoBehaviour {
 
 	public float ShootSpeed;
 	public float interval;
-	private float i;
+	public float StartOffset;
+	private float i = 0;
+	private float j = 0;
 
 	private void Update() {
-		i++;
+		j++;
+		if (j >= StartOffset)
+			i++;
 		if (i >= interval) {
 			Shoot();
 			i = 0;

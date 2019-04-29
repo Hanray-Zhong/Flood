@@ -18,6 +18,7 @@ public class PlayerUnit : MonoBehaviour {
 		if (isDead == true) {
 			if (DeadEffect != null)
 				Instantiate(DeadEffect, transform.position, transform.rotation);
+			PlayerPrefs.SetInt("Reload", 1);
 			systemController.GetComponent<SystemController>().LoadScene(recnetCard);
 			Destroy(gameObject);
 		}

@@ -9,6 +9,7 @@ public class ChangeScene : MonoBehaviour
 	
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
+            PlayerPrefs.SetInt("Reload", 0);
             systemController.GetComponent<SystemController>().LoadScene(Scene_num);
         }
     }

@@ -209,4 +209,7 @@ MonoBehaviour:
   systemController: {fileID: 0}
   DeadEffect: {fileID: 1615402597081308, guid: 5ff5445ac2bdbba4eae1c99568b02acc, type: 3}
   isDead: 0
-  recnetCard: 1
+  recnetCard: 4
+  LoseEnergy: 1
+  DecreaseSpeed: 4
+  Energy: 100

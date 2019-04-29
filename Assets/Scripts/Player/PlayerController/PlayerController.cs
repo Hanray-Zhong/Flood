@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 	public CapsuleCollider2D collider_2;
 	[Header("Animation")]
 	public Animator animator;
+	[Header("Can Move")]
+	public bool CanMove;
 
 
 	void FixedUpdate () {
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour {
 		rise = Input.GetAxis("Rise");
 	}
 	void GetMoveDir () {
+		if (!CanMove) return;
 		MoveDir = new Vector2(0, 0);
 		MoveDir = new Vector2(hl, 0).normalized;
 		if (hl == 0) {
@@ -71,6 +74,7 @@ public class PlayerController : MonoBehaviour {
 		this.gameObject.GetComponent<Rigidbody2D>().AddForce(MoveDir * Speed * Time.deltaTime);
 	}
 	void RiseUp() {
+		if (!CanMove) return; 
 		this.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * rise * Rise_speed * Time.deltaTime);
 	}
 	void IsOntheGround() {
