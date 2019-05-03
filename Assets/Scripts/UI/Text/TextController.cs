@@ -53,7 +53,7 @@ public class TextController : MonoBehaviour
     }
 
     IEnumerator NextText() {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.5f);
         currentText.SetActive(false);
         nextText.SetActive(true);
         currentText = nextText;

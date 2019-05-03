@@ -34,9 +34,11 @@ public class MusicController : MonoBehaviour
             }
         else if ((SceneManager.GetActiveScene().buildIndex == 3 || 
             SceneManager.GetActiveScene().buildIndex == 4 || 
-            SceneManager.GetActiveScene().buildIndex == 5 || 
-            SceneManager.GetActiveScene().buildIndex == 7) && audioSource.clip != music[1]) {
+            SceneManager.GetActiveScene().buildIndex == 5) && audioSource.clip != music[1]) {
                 ChangeMusic(music[1]);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 7 && audioSource.clip != music[0]) {
+            ChangeMusic(music[0]);
         }
         if (canChange) {
             audioSource.volume -= 0.03f;
@@ -49,7 +51,7 @@ public class MusicController : MonoBehaviour
     }
 
     IEnumerator Change(AudioClip music) {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         canChange = false;
         audioSource.volume = 1;
         audioSource.clip = music;

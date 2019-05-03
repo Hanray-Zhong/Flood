@@ -22,8 +22,8 @@ public class Key : MonoBehaviour
 		transform.position = oldPos + new Vector3 (0, dy, 0);
     }
 
-	private void OnTriggerEnter2D(Collider2D other) {
-		if (other.tag == "Player") {
+	private void OnTriggerStay2D(Collider2D other) {
+		if (other.tag == "Player" && Input.GetKey(KeyCode.K)) {
             Destroy(effect);
             gameObject.SetActive(false);
 			Picked = true; 

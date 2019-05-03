@@ -9,6 +9,7 @@ public class GameStart : MonoBehaviour
     {
         if (Input.anyKeyDown) {
             PlayerPrefs.SetInt("Reload", 0);
+            PlayerPrefs.SetInt("Revive Point", -1);
             systemController.LoadScene(6);
         }
     }

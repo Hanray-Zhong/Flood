@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 43.69995, y: -18.600006}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.0000076293945}
   m_SizeDelta: {x: 1310.3, y: 128.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1369832185
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4E3A\u4EC0\u4E48\u8FD9\u91CC\u4F1A\u6709\u8FD9\u4E48\u8EB2\u5371\u9669\u7684\u4E1C\u897F\uFF1F\n\u4F3C\u4E4E...\u8FD8\u6709\u6765\u81EA\u6D77\u6D0B\u4E4B\u5916\u7684\u5947\u602A\u4E1C\u897F..."
+  m_Text: "\uFF08\u597D\u50CF\u9700\u8981\u4E00\u628A\u94A5\u5319\u624D\u80FD\u6253\u5F00\u8FD9\u6247\u95E8\uFF09"
 --- !u!225 &7800703108226962206
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369832182}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c04f4fc11812147a7261f4819e35ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeSpeed: 0
-  CanFade: 1
+  FadeSpeed: 0.01
+  CanFade: 0
 --- !u!1 &6796908282509129998
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,15 +151,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6796908282509129998}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b67f0f60094fc6b428006de05868ed13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   systemController: {fileID: 0}
+  Level: 0
   texts:
   - {fileID: 1369832182}
-  - {fileID: 0}
   Board: {fileID: 6796908282909532888}
   Player: {fileID: 0}
   NeedPressKey: 0
@@ -265,4 +265,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeSpeed: 0
-  CanFade: 1
+  CanFade: 0

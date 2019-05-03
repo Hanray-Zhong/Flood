@@ -25,7 +25,7 @@ public class KeyDoor : MonoBehaviour
 		if (Input.GetKey(KeyCode.K)) {
             foreach (var item in keys) {
                 if (!item.Picked) {
-                    if (Text != null) {
+                    if (Text != null && Text.GetComponent<CanvasGroup>().alpha == 0) {
                         Text.GetComponent<Fade>().CanFade = true;
                         StartCoroutine(FadeAgain());
                     }

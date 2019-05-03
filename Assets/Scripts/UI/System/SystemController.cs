@@ -16,7 +16,7 @@ public class SystemController : MonoBehaviour {
 		StartCoroutine(Load(i));
 	}
 	IEnumerator Load(int i) {
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1.5f);
 		SceneManager.LoadScene(i);
 	}
 }
